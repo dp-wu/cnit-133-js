@@ -63,3 +63,22 @@ function res() {
     /* reset focus */
     document.calculator.input.focus();
 }
+
+
+// hw2 extra credit answer
+function exchange() {
+    /* get variable values */
+    const EUR = 0.84;
+    const CAN = 1.23;
+    const HKD = 7.76;
+    const JPY = 110.80;
+    const MXN = 19.82;
+    let usd = parseFloat(document.getElementById("usd").value);
+
+    /* set values */
+    document.getElementById("to-eur").value = usd * EUR;
+    document.getElementById("to-can").value = usd * CAN;
+    document.getElementById("to-hkd").value = usd * HKD;
+    document.getElementById("to-jpy").value = usd * JPY;
+    document.getElementById("to-mxn").value = usd * MXN;
+}

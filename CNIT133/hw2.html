@@ -175,35 +175,36 @@
                                 <th>Value</th>
                             </tr>
                             <tr>
-                                <td>Euro</td>
+                                <td><label for="to-eur">Euro</label></td>
                                 <td id="eur">0.84</td>
                                 <td><input type="text" name="to-eur" id="to-eur" size="5" readonly></td>
                             </tr>
                             <tr>
-                                <td>Canadian Dollar</td>
+                                <td><label for="to-can">Canadian Dollar</label></td>
                                 <td id="cad">1.23</td>
-                                <td><input type="text" name="to-eur" id="to-can" size="5" readonly></td>
+                                <td><input type="text" name="to-can" id="to-can" size="5" readonly></td>
                             </tr>
                             <tr>
-                                <td>Hong Kong Dollar</td>
+                                <td><label for="to-hkd">Hong Kong Dollar</label></td>
                                 <td id="hkd">7.76</td>
-                                <td><input type="text" name="to-eur" id="to-hkd" size="5" readonly></td>
+                                <td><input type="text" name="to-hkd" id="to-hkd" size="5" readonly></td>
                             </tr>
                             <tr>
-                                <td>Japanese Yen</td>
+                                <td><label for="to-jpy">Japanese Yen</label></td>
                                 <td id="jpy">110.80</td>
-                                <td><input type="text" name="to-eur" id="to-jpy" size="5" readonly></td>
+                                <td><input type="text" name="to-jpy" id="to-jpy" size="5" readonly></td>
                             </tr>
                             <tr>
-                                <td>Mexican Peso</td>
+                                <td><label for="to-mxn">Mexican Peso</label></td>
                                 <td id="mxn">19.82</td>
-                                <td><input type="text" name="to-eur" id="to-mxn" size="5" readonly></td>
+                                <td><input type="text" name="to-mxn" id="to-mxn" size="5" readonly></td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2"><label for="usd">Enter Amount of U.S. Dollars</label></td>
-                                <td><input type="number" name="usd" id="usd" size="5"></td>
+                                <td><label for="usd">Enter Amount of U.S. Dollars</label></td>
+                                <td><input type="button" onclick="exchange();" value="exchange"></td>
+                                <td><input type="text" name="usd" id="usd" size="5"></td>
                             </tr>
                         </tfoot>
                     </table>
