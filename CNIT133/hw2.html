@@ -8,12 +8,14 @@
     <!-- Using MaxCDN Bootstrap CDN (pasted from W3Schools -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../template/template.css">
+    <link rel="stylesheet" href="../CSS/cnit.css">
+    <link rel="stylesheet" href="../CSS/hw2.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!-- Navigation bar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="../index.html">BogusProof</a>
@@ -42,8 +44,179 @@
     </div>
 </nav>
 <!-- My contents will be here -->
-<div class="container">
-<h5>Content coming soon...</h5><p><a href="hw1.html">click here return to hw#1</a></p>
+<div class="container container-fluid">
+    <header>
+        <h2>Homework 2 - Basic Operations</h2>
+    </header>
+    <hr>
+    <div class="row content" id="main-content">
+        <!-- sidebar on the left for easy navigation -->
+        <nav class="col-sm-3">
+            <ul class="nav navbar-default nav-pills nav-stacked">
+                <li><a href="#part1"><b>[PART1] Display Text</b></a></li>
+                <li><a href="#part2"><b>[PART2] Basic Calculator</b></a></li>
+                <li><a href="#part3"><b>[EXTRA] Exchange Rates</b></a></li>
+            </ul>
+            <p id="return-to-hw1"><a href="hw1.html"> <<< click here return to hw#1</a></p>
+        </nav>
+        <div class="col-sm-1"></div>
+        <!-- main content on the right -->
+        <div class="col-sm-8 text-left">
+            <div class="row" id="part1">
+                <h4>Part 1 - Display Text</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                    <li>the letters xy in strong (bold) font, with font family Times New Roman, and the color red </li>
+                    <li>the numbers 12 that should be written in blue color, and font family Arial</li>
+                    <li>the numbers 89 that should be written in green color, emphasized (in italics), and font family Impact</li>
+                    <li>Each of these pairs should be separated by one blank space.</li>
+                </ul>
+                        <p><strong>Answer</strong></p>
+                    <ul>
+                        <li><span id="p1p1"><strong>xy</strong></span> <span id="p1p2">12</span> <span id="p1p3"><em>89</em></span></li>
+                    </ul>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part2">
+                <h4>Part 2 - Basic Calculator</h4>
+                <div class="answers">
+                    <script src="../JS/hw2.js"></script>
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>three input boxes for three integer inputs</li>
+                        <li>a button to process the input data</li>
+                        <li>a button to clear the form</li>
+                        <li>a textarea to display the result</li>
+                        <li>fade away effect</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p2">
+                        <form name="calculator">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Calculator</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><label for="num1">First Number:</label></td>
+                                        <td><input type="text" name="num1" id="num1" size="10" autofocus></td>
+                                    </tr>
+                                    <tr id="err1"></tr>
+                                    <tr>
+                                        <td><label for="num2">Second Number:</label></td>
+                                        <td><input type="text" name="num2" id="num2" size="10"></td>
+                                    </tr>
+                                    <tr id="err2"></tr>
+                                    <tr>
+                                        <td><label for="num3">Third Number:</label></td>
+                                        <td><input type="text" name="num3" id="num3" size="10"></td>
+                                    </tr>
+                                    <tr id="err3"></tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="sum">Sum is:</label></td>
+                                        <td><input type="text" name="sum" id="sum" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="avg">Average is:</label></td>
+                                        <td><input type="text" name="avg" id="avg" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="prod">Product is:</label></td>
+                                        <td><input type="text" name="prod" id="prod" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="max">Max is:</label></td>
+                                        <td><input type="text" name="max" id="max" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="min">Min is:</label></td>
+                                        <td><input type="text" name="min" id="min" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="button" onclick="compute();" value="compute"></td>
+                                        <td><input type="reset" value="reset" onclick="res();"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part3">
+                <h4>Extra Credit - Exchange Rates</h4>
+                <div class="answers">
+                    <table id="exchange">
+                        <thead>
+                            <tr>
+                                <th colspan="3">Monetary Exchange Rates</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Currency</th>
+                                <th>Rate</th>
+                                <th>Value</th>
+                            </tr>
+                            <tr>
+                                <td>Euro</td>
+                                <td id="eur">0.84</td>
+                                <td><input type="text" name="to-eur" id="to-eur" size="5" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Canadian Dollar</td>
+                                <td id="cad">1.23</td>
+                                <td><input type="text" name="to-eur" id="to-can" size="5" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Hong Kong Dollar</td>
+                                <td id="hkd">7.76</td>
+                                <td><input type="text" name="to-eur" id="to-hkd" size="5" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Japanese Yen</td>
+                                <td id="jpy">110.80</td>
+                                <td><input type="text" name="to-eur" id="to-jpy" size="5" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Mexican Peso</td>
+                                <td id="mxn">19.82</td>
+                                <td><input type="text" name="to-eur" id="to-mxn" size="5" readonly></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"><label for="usd">Enter Amount of U.S. Dollars</label></td>
+                                <td><input type="number" name="usd" id="usd" size="5"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<footer class="footer-default">
+    <div class="container-fluid text-center">
+    <p>Yves</p>
+</div>
+</footer>
 </body>
 </html>

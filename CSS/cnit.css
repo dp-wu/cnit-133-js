@@ -1,0 +1,25 @@
+header {
+    margin: 1vh;
+}
+
+#main-content {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.col-sm-3 .col-sm-8 {
+    padding: 1vh;
+}
+
+#return-to-hw1 {
+    margin: 2vh 1vh;
+}
+
+.answers {
+    margin-left: 2vh;
+}
+
+h2 {
+    margin: 1vh 0;
+    text-align: center;
+}

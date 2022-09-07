@@ -1,0 +1,58 @@
+/* part 1 answer */
+#p1p1 {
+    font-family: "Times New Roman", serif;
+    color: red;
+}
+#p1p2 {
+    font-family: Arial, serif;
+    color: blue;
+}
+#p1p3 {
+    font-family: Impact, serif;
+    color: green;
+}
+
+/* part 2 answer */
+table {
+    margin: 1vh 2vh;
+    width: 100%;
+    border: 1px solid;
+}
+
+th, tr, td {
+    padding: 0.2vh 1vh;
+    text-align: left;
+}
+
+#num1, #num2, #num3 {
+    background-color: #F8F9D7;
+}
+
+#sum, #prod, #avg, #min, #max {
+    background-color: #B2C8DF;
+}
+
+/* part 3 answer */
+thead {
+    font-size: large;
+    background-color: #6E85B7;
+}
+
+thead th {
+    text-align: center;
+}
+
+tfoot {
+    background-color: #C4D7E0;
+}
+
+#to-can, #to-eur, #to-hkd, #to-jpy, #to-mxn {
+    width: 10vh;
+    background-color: #B2C8DF;
+}
+
+#usd {
+    width: 10vh;
+    background-color: #F8F9D7;
+}
+
