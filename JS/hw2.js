@@ -59,7 +59,7 @@ function res() {
             $("#avg").fadeTo("slow", 1);
             $("#max").fadeTo("slow", 1);
             $("#min").fadeTo("slow", 1);
-        })
+        });
     /* reset focus */
     document.calculator.input.focus();
 }
@@ -76,9 +76,23 @@ function exchange() {
     let usd = parseFloat(document.getElementById("usd").value);
 
     /* set values */
-    document.getElementById("to-eur").value = usd * EUR;
-    document.getElementById("to-can").value = usd * CAN;
-    document.getElementById("to-hkd").value = usd * HKD;
-    document.getElementById("to-jpy").value = usd * JPY;
-    document.getElementById("to-mxn").value = usd * MXN;
+    document.getElementById("to-eur").value = (usd * EUR).toFixed(2);
+    document.getElementById("to-can").value = (usd * CAN).toFixed(2);
+    document.getElementById("to-hkd").value = (usd * HKD).toFixed(2);
+    document.getElementById("to-jpy").value = (usd * JPY).toFixed(2);
+    document.getElementById("to-mxn").value = (usd * MXN).toFixed(2);
 }
+
+$(document).ready(function () {
+    /* toggle the message */
+    $("#show-hide").click(function () {
+        $(".message").toggle();
+    });
+    /* change textarea background color */
+    $("#usd").focus(function () {
+        $(this).css('background-color', '#ffffff');
+    });
+});
+
+
+

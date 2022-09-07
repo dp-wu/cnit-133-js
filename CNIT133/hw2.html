@@ -71,8 +71,8 @@
                     <li>the numbers 12 that should be written in blue color, and font family Arial</li>
                     <li>the numbers 89 that should be written in green color, emphasized (in italics), and font family Impact</li>
                     <li>Each of these pairs should be separated by one blank space.</li>
-                </ul>
-                        <p><strong>Answer</strong></p>
+                    </ul>
+                    <p><strong>Answer</strong></p>
                     <ul>
                         <li><span id="p1p1"><strong>xy</strong></span> <span id="p1p2">12</span> <span id="p1p3"><em>89</em></span></li>
                     </ul>
@@ -102,6 +102,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
                                     <tr>
                                         <td><label for="num1">First Number:</label></td>
                                         <td><input type="text" name="num1" id="num1" size="10" autofocus></td>
@@ -151,6 +156,11 @@
                                         <td><input type="button" onclick="compute();" value="compute"></td>
                                         <td><input type="reset" value="reset" onclick="res();"></td>
                                     </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </form>
@@ -162,6 +172,20 @@
             <div class="row" id="part3">
                 <h4>Extra Credit - Exchange Rates</h4>
                 <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>use provided exchange rate compute corresponding currency amount with given U.S. dollar amount</li>
+                        <li>round to 2 decimal places</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <ul>
+                        <li>
+                            <button id="show-hide">Click to Show/Hide Instructions</button>
+                            <br>
+                            <p class="message">Following shows the foreign exchange rates in June 2021</p>
+                            <p class="message">Enter a dollar amount in the table below to see the corresponding foreign exchange values</p>
+                        </li>
+                    </ul>
                     <table id="exchange">
                         <thead>
                             <tr>

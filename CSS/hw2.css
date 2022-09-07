@@ -32,7 +32,7 @@ th, tr, td {
     background-color: #B2C8DF;
 }
 
-/* part 3 answer */
+/* part extra credit answer */
 thead {
     font-size: large;
     background-color: #6E85B7;
@@ -40,6 +40,10 @@ thead {
 
 thead th {
     text-align: center;
+}
+
+tr th {
+    border-bottom: 1px solid #B2C8DF;
 }
 
 tfoot {
@@ -56,3 +60,10 @@ tfoot {
     background-color: #F8F9D7;
 }
 
+#show-hide {
+    margin: 1vh;
+}
+
+.message {
+    margin-left: 1.5vh;
+}
