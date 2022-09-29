@@ -25,9 +25,9 @@ function compute() {
         else { grade = "F"; }
         // print results in the textarea
         if (fav >= 70) {
-            document.getElementById("fav").value = `Final average grade is ${grade}. \bFinal letter grade is ${grade}.`;
+            document.getElementById("fav").value = `Final average grade is ${fav}. \bFinal letter grade is ${grade}.`;
         } else {
-            document.getElementById("fav").value = `Final average grade is ${grade}. \bFinal letter grade is ${grade}. \bStudent must retake the course.`;
+            document.getElementById("fav").value = `Final average grade is ${fav}. \bFinal letter grade is ${grade}. \bStudent must retake the course.`;
         }
     }
 }
