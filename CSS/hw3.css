@@ -1,0 +1,13 @@
+#seller {
+    display: inline-block;
+    width: 5em;
+}
+
+#total, #weekly, #item1q, #item2q, #item3q, #item4q, #item1t, #item2t, #item3t, #item4t {
+    text-align: right;
+}
+
+#questions {
+    color: #6E85B7;
+    text-align: justify-all;
+}

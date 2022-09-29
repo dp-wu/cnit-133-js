@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#3">
+    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#2">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HW#3</title>
+    <title>HW#2</title>
     <!-- Using MaxCDN Bootstrap CDN (pasted from W3Schools -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/template.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../template/template.css">
+    <link rel="stylesheet" href="../CSS/cnit.css">
+    <link rel="stylesheet" href="../CSS/hw2.css">
+    <link rel="stylesheet" href="../CSS/hw3.css">
+    <script src="../JS/hw3.js"></script>
 </head>
-<body>
+<body onload="randints();">
 <!-- Navigation bar -->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -43,10 +50,289 @@
 </nav>
 <!-- My contents will be here -->
 <div class="container container-fluid">
-<h5>Content coming soon...</h5><p><a href="hw1.html">click here return to hw#1</a></p>
+    <header>
+        <h2>Homework 2 - Basic Operations</h2>
+    </header>
+    <hr>
+    <div class="row content" id="main-content">
+        <!-- sidebar on the left for easy navigation -->
+        <nav class="col-lg-4">
+            <ul class="nav navbar-default nav-pills nav-stacked">
+                <li><a href="#part1"><b>[PART1] Student Grades</b></a></li>
+                <li><a href="#part2"><b>[PART2] Salesperson Commission</b></a></li>
+                <li><a href="#part3"><b>[PART3] Temperature Converter</b></a></li>
+                <li><a href="#part4"><b>[EXTRA] Multiplication</b></a></li>
+            </ul>
+            <p id="return-to-hw1"><a href="hw1.html"> <<< click here return to hw#1</a></p>
+        </nav>
+        <div class="col-lg-1"></div>
+        <!-- main content on the right -->
+        <div class="col-lg-7 text-left">
+            <div class="row" id="part1">
+                <h4>Part 1 - Student Grades</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                    <li>display homework average, midterm score, final score and participation</li>
+                    <li>a button for data submission and a button to clear the form</li>
+                    <li>a textarea to display the result or error message</li>
+                    <li>validate input (0-100, numbers only), then display final average and letter grade</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p1">
+                        <form name="student-grade">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Student Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="hwa">Homework Average:</label></td>
+                                        <td><input type="number" name="hwa" id="hwa" min="0" max="100" size="10" autofocus></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="mes">Mid-Term Exam Score:</label></td>
+                                        <td><input type="number" name="mes" id="mes" min="0" max="100" size="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="fes">Final Exam Score:</label></td>
+                                        <td><input type="number" name="fes" id="fes" min="0" max="100" size="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="par">Participation:</label></td>
+                                        <td><input type="number" name="par" id="par" min="0" max="100" size="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="fav">Final Grade:</label></td>
+                                        <td><textarea id="fav" name="fav" rows="4" cols="20"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="button" onclick="compute();" value="compute"></td>
+                                        <td><input type="reset" value="reset" onclick="res();"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part2">
+                <h4>Part 2 - Salesperson Commission</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>show message when hovering over the name field using jQuery</li>
+                        <li>user will input the quantity of items sold for each item</li>
+                        <li>validate user input</li>
+                        <li>round money result to 2 decimals</li>
+                        <li>total sold and total money results are right-justified</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p2">
+                        <form name="commission">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">Salesperson Commission</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="seller">Seller's Name:</label></td>
+                                        <td><input type="text" name="seller" id="seller" size="10" title="Please make sure that the salesperson's name is spelled correctly"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4"><p><b>For each item type the quantity sold by the seller</b></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><label for="item1">Item 1:</label></td>
+                                        <td colspan="2"><input type="number" name="item1" id="item1" size="10"></td>
+                                        <td colspan="1"><p id="err1"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><label for="item2">Item 2:</label></td>
+                                        <td colspan="2"><input type="number" name="item2" id="item2" size="10"></td>
+                                        <td colspan="1"><p id="err2"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><label for="item3">Item 3:</label></td>
+                                        <td colspan="2"><input type="number" name="item3" id="item3" size="10"></td>
+                                        <td colspan="1"><p id="err3"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><label for="item4">Item 4:</label></td>
+                                        <td colspan="2"><input type="number" name="item4" id="item4" size="10"></td>
+                                        <td colspan="1"><p id="err4"></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="1"><input type="button" onclick="calculate();" value="Submit"></td>
+                                        <td colspan="1"><input type="button" value="Clear Form" onclick="clearForm();"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Item#</b></td>
+                                        <td><b>Price</b></td>
+                                        <td><b>Qty Sold</b></td>
+                                        <td><b>Total $</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="item1q">1</label></td>
+                                        <td><label for="item1t">$20.99</label></td>
+                                        <td><input type="number" id="item1q" name="item1q" size="10" readonly></td>
+                                        <td><input type="number" id="item1t" name="item1t" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="item2q">2</label></td>
+                                        <td><label for="item2t">$12.75</label></td>
+                                        <td><input type="number" id="item2q" name="item2q" size="10" readonly></td>
+                                        <td><input type="number" id="item2t" name="item2t" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="item3q">3</label></td>
+                                        <td><label for="item3t">$9.95</label></td>
+                                        <td><input type="number" id="item3q" name="item3q" size="10" readonly></td>
+                                        <td><input type="number" id="item3t" name="item3t" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="item4q">4</label></td>
+                                        <td><label for="item4t">$35.89</label></td>
+                                        <td><input type="number" id="item4q" name="item4q" size="10" readonly></td>
+                                        <td><input type="number" id="item4t" name="item4t" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><label for="total">Total Amount Sold</label></td>
+                                        <td colspan="2"><input id="total" name="total" type="number" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><label for="weekly">Total Weekly Earnings</label></td>
+                                        <td colspan="2"><input type="number" name="weekly" id="weekly" size="10" readonly></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part3">
+                <h4>Part 3 - Temperature Converter</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>convert from C to F</li>
+                        <li>convert from F to C</li>
+                        <li>validate user input</li>
+                        <li>result should have no decimal values</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <table id="degreeConverter">
+                        <thead>
+                            <tr>
+                                <th colspan="4">Temperature Converter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label for="temp">Enter Degrees to Convert:</label></td>
+                                <td><input type="number" name="temp" id="temp" size="5"></td>
+                                <td><input type="button" value="Convert to Celsius" onclick="converter('f2c');"></td>
+                                <td><input type="button" value="Convert to Fahrenheit" onclick="converter('c2f');"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="1"><label for="converted">Result:</label></td>
+                                <td colspan="3"><textarea name="converted" id="converted" readonly></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part4">
+                <h4>Extra Credit - Multiplication</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>generate 2 random digits X and Y for multiplication practice</li>
+                        <li>check if student typed in correct answer</li>
+                        <li>validate user input</li>
+                        <li>result should have no decimal values</li>
+                    </ul>
+                    <p><strong>Answer</strong>
+                    <table id="multiplicationPractice">
+                        <thead>
+                            <tr>
+                                <th colspan="4">Multiplication Practice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1"><label for="questions">Question:</label></td>
+                                <td colspan="3"><p id="questions"></p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="1"><label for="ans">Your Answer:</label></td>
+                                <td colspan="1"><input type="number" id="ans" name="ans" size="10"></td>
+                                <td colspan="1"><p id="checked"></p></td>
+                                <td colspan="1"><input type="button" value="Check Result" onclick="checkresult();"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><p id="tryagain"></p></td>
+                                <td colspan="1" id="yes"></td>
+                                <td colspan="1" id="no"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<footer class="container-fluid text-center">
-    <p>Yves Wu</p>
+<footer class="footer-default">
+    <div class="container-fluid text-center">
+    <p>Yves</p>
+</div>
 </footer>
 </body>
 </html>
+
