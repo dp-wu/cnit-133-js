@@ -57,7 +57,7 @@
                 <li><a href="#part2"><b>[PART2] Basic Calculator</b></a></li>
                 <li><a href="#part3"><b>[EXTRA] Exchange Rates</b></a></li>
             </ul>
-            <p id="return-to-hw1"><a href="hw1.html"> <<< click here return to hw#1</a></p>
+            <p id="return-to-hw1"><a href="hw1.html"> &lt;&lt;&lt; click here return to hw#1</a></p>
         </nav>
         <div class="col-lg-1"></div>
         <!-- main content on the right -->
@@ -111,17 +111,23 @@
                                         <td><label for="num1">First Number:</label></td>
                                         <td><input type="text" name="num1" id="num1" size="10" autofocus></td>
                                     </tr>
-                                    <tr id="err1"></tr>
+                                    <tr>
+                                        <td colspan="2" id="err1"></td>
+                                    </tr>
                                     <tr>
                                         <td><label for="num2">Second Number:</label></td>
                                         <td><input type="text" name="num2" id="num2" size="10"></td>
                                     </tr>
-                                    <tr id="err2"></tr>
+                                    <tr>
+                                        <td colspan="2" id="err2"></td>
+                                    </tr>
                                     <tr>
                                         <td><label for="num3">Third Number:</label></td>
                                         <td><input type="text" name="num3" id="num3" size="10"></td>
                                     </tr>
-                                    <tr id="err3"></tr>
+                                    <tr>
+                                        <td colspan="2" id="err3"></td>
+                                    </tr>
                                     <tr>
                                         <!-- creates a gap between forms and buttons -->
                                         <td><p> </p></td>
@@ -228,7 +234,7 @@
                             <tr>
                                 <td><label for="usd">Enter Amount of U.S. Dollars</label></td>
                                 <td><input type="button" onclick="exchange();" value="exchange"></td>
-                                <td><input type="number" name="usd" id="usd" size="5"></td>
+                                <td><input type="number" name="usd" id="usd"></td>
                             </tr>
                         </tfoot>
                     </table>
