@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#4">
+    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#3">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HW#4</title>
     <!-- Using MaxCDN Bootstrap CDN (pasted from W3Schools -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/template.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../template/template.css">
+    <link rel="stylesheet" href="../CSS/cnit.css">
+    <link rel="stylesheet" href="../CSS/hw2.css">
+    <link rel="stylesheet" href="../CSS/hw4.css">
+    <script src="../JS/hw4.js"></script>
 </head>
-<body>
+<body onload="loadContents();">
 <!-- Navigation bar -->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -43,10 +50,126 @@
 </nav>
 <!-- My contents will be here -->
 <div class="container container-fluid">
-<h5>Content coming soon...</h5><p><a href="hw1.html">click here return to hw#1</a></p>
+    <header>
+        <h2>Homework 4 - Looping Statements</h2>
+    </header>
+    <hr>
+    <div class="row content" id="main-content">
+        <!-- sidebar on the left for easy navigation -->
+        <nav class="col-lg-4">
+            <ul class="nav navbar-default nav-pills nav-stacked">
+                <li><a href="#part1"><b>[PART1] Product and Sums</b></a></li>
+                <li><a href="#part2"><b>[PART2] Learn about Compound Interest</b></a></li>
+                <li><a href="#part3"><b>[EXTRA] Hollow Square of a Given Size</b></a></li>
+            </ul>
+            <p id="return-to-hw1"><a href="hw1.html"> &lt;&lt;&lt; click here return to hw#1</a></p>
+        </nav>
+        <div class="col-lg-1"></div>
+        <!-- main content on the right -->
+        <div class="col-lg-7 text-left">
+            <div class="row" id="part1">
+                <h4>Part 1 - Products and Sums</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>use <i>for</i> loop calculate the <i>product and sum</i> of every four integer in [5, 25]</li>
+                        <li>use <i>while/do-while</i> loop calculate the <i>product and sum</i> of every third integer in [3, 18]</li>
+                        <li>display result with accompanying text</li>
+                        <li>use <code>toLocaleString()</code> to present the result with the correct punctuation</li>
+                        <li>use jQuery UI to make the table draggable</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p1">
+                        <form name="Products-and-Sums">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Products and Sums</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td colspan="2"><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2"><b>Every 4th in [5, 25]</b></td>
+                                        <td id="4prod"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id = "4sum"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td colspan="2"><p> </p></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2"><b>Every 3rd in [3, 18]</b></td>
+                                        <td id="3prod"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="3sum"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <!-- creates a gap between forms and buttons -->
+                                        <td><p> </p></td>
+                                        <td><p> </p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part2">
+                <h4>Part 2 - Learn about Compound Interest</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>show three tables with compound interest on a principal of $1000</li>
+                        <li>first table for interest rate of 5%</li>
+                        <li>second table for interest rate of 6%</li>
+                        <li>third table for interest rate of 7%</li>
+                        <li>use 1 nested loop to create the 3 tables</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p2">
+                        <form name="interest-rates" id="interest">
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part3">
+                <h4>Extra Credit - Hollow Square of a Given Size</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>display a hollow square of a user input size</li>
+                        <li>the size will between 2 to 10</li>
+                        <li>if input size if invalid, display error message</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p3">
+                        <label for="squaresize">Enter an integer: </label>
+                        <input id="squaresize" type="number" name="squaresize" min="2" max="10"> <button onclick="square();">Draw my square</button>
+                        <div id="showsquare"></div>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<footer class="container-fluid text-center">
-    <p>Yves Wu</p>
+<footer class="footer-default">
+    <div class="container-fluid text-center">
+    <p>Yves</p>
+</div>
 </footer>
 </body>
 </html>
+
