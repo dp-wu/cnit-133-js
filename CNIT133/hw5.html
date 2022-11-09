@@ -222,9 +222,31 @@
                 <div class="answers">
                     <p><strong>Description</strong></p>
                     <ul>
+                        <li>ask user to type in state full name or its abbreviation</li>
+                        <li>search in database to see if state exists</li>
+                        <li>print out result and extra information of the state</li>
                     </ul>
                     <p><strong>Answer</strong></p>
                     <div id="answer-p3">
+                        <form name="stateinfo">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <td colspan="4">Census Data of User's State</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><label for="state">Enter your State here:</label></td>
+                                    <td><input id="state" name="state" type="text" required></td>
+                                    <td><input id="searchstate" name="searchstate" value="Search" type="button" onclick="search();"></td>
+                                    <td id="state_empty"></td>
+                                </tr>
+                                <tr id="resultlabel"></tr>
+                                <tr id="resultdata"></tr>
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>

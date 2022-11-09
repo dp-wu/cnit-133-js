@@ -100,3 +100,103 @@ function funnyVideos(thisForm) {
 /* *********************************************
  Part 3 - User State Information
 ********************************************* */
+function search() {
+    // from https://gist.github.com/JeffPaine/3083347
+    let STATES = {
+        'AK': 'Alaska',
+        'AL': 'Alabama',
+        'AR': 'Arkansas',
+        'AZ': 'Arizona',
+        'CA': 'California',
+        'CO': 'Colorado',
+        'CT': 'Connecticut',
+        'DC': 'District of Columbia',
+        'DE': 'Delaware',
+        'FL': 'Florida',
+        'GA': 'Georgia',
+        'HI': 'Hawaii',
+        'IA': 'Iowa',
+        'ID': 'Idaho',
+        'IL': 'Illinois',
+        'IN': 'Indiana',
+        'KS': 'Kansas',
+        'KY': 'Kentucky',
+        'LA': 'Louisiana',
+        'MA': 'Massachusetts',
+        'MD': 'Maryland',
+        'ME': 'Maine',
+        'MI': 'Michigan',
+        'MN': 'Minnesota',
+        'MO': 'Missouri',
+        'MS': 'Mississippi',
+        'MT': 'Montana',
+        'NC': 'North Carolina',
+        'ND': 'North Dakota',
+        'NE': 'Nebraska',
+        'NH': 'New Hampshire',
+        'NJ': 'New Jersey',
+        'NM': 'New Mexico',
+        'NV': 'Nevada',
+        'NY': 'New York',
+        'OH': 'Ohio',
+        'OK': 'Oklahoma',
+        'OR': 'Oregon',
+        'PA': 'Pennsylvania',
+        'RI': 'Rhode Island',
+        'SC': 'South Carolina',
+        'SD': 'South Dakota',
+        'TN': 'Tennessee',
+        'TX': 'Texas',
+        'UT': 'Utah',
+        'VA': 'Virginia',
+        'VT': 'Vermont',
+        'WA': 'Washington',
+        'WI': 'Wisconsin',
+        'WV': 'West Virginia',
+        'WY': 'Wyoming'
+    };
+
+    let exist = false;
+    let state = document.getElementById("state").value.toUpperCase();
+    let abbr = state.length === 2 ;
+    if (abbr) {
+        if (state in STATES) {
+            exist = searchData(STATES[state].toUpperCase());
+        } else {
+            exist = false;
+        }
+    } else {
+        exist = searchData(state);
+    }
+
+    if (!exist) {
+        document.getElementById("state_empty").innerHTML = "State does not exist!"
+        document.getElementById("resultlabel").innerHTML = ""
+        document.getElementById("resultdata").innerHTML = "";
+    } else {
+        document.getElementById("state_empty").innerHTML = "";
+    }
+}
+
+async function searchData(s) {
+    let found = false;
+    // data api
+    const API_URL = "https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest";
+    const RESPONSE = await fetch(API_URL);
+    const DATA = await RESPONSE.json();
+    const POPULATION = DATA.data;
+
+    // find info
+    //window.alert(DATA.data[0]["State"]);
+    //window.alert(s);
+    for (let ind=0; ind<POPULATION.length; ind++) {
+        if (POPULATION[ind]["State"].toUpperCase() === s) {
+            document.getElementById("resultlabel").innerHTML = "<td colspan='4'><p><strong>State Data Found:</strong></p></td>";
+            document.getElementById("resultdata").innerHTML = `<td>State Name:</td><td>${s}</td><td>Population:</td><td>${POPULATION[ind]["Population"]}</td>`;
+            found = true;
+            break;
+        }
+    }
+
+    return found;
+}
