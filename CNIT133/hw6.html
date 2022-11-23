@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#6">
+    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#5">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HW#6</title>
-    <!-- Using MaxCDN Bootstrap CDN (pasted from W3Schools -->
+    <!-- jQuery UI -->
+    <link href=”https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css” rel =”stylesheet”>
+    <script src=”https://code.jquery.com/jquery-1.10.2.js”></script>
+    <script src=”https://code.jquery.com/ui/1.10.4/jquery-ui.js”></script>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/template.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Local Styles and Source Code -->
+    <link rel="stylesheet" href="../template/template.css">
+    <link rel="stylesheet" href="../CSS/cnit.css">
+    <link rel="stylesheet" href="../CSS/hw2.css">
+    <link rel="stylesheet" href="../CSS/hw6.css">
+    <script src="../JS/hw6.js"></script>
 </head>
 <body>
 <!-- Navigation bar -->
@@ -43,10 +52,204 @@
 </nav>
 <!-- My contents will be here -->
 <div class="container container-fluid">
-<h5>Content coming soon...</h5><p><a href="hw1.html">click here return to hw#1</a></p>
+    <header>
+        <h2>Homework 6 - Objects</h2>
+    </header>
+    <hr>
+    <div class="row content" id="main-content">
+        <!-- sidebar on the left for easy navigation -->
+        <nav class="col-lg-4">
+            <ul class="nav navbar-default nav-pills nav-stacked">
+                <li><a href="#part1"><b>[PART1] Validate for 4+ Decimal Positions</b></a></li>
+                <li><a href="#part2"><b>[PART2] Regex - Matching a Char</b></a></li>
+                <li><a href="#part3"><b>[PART3] Regex - Matching Phone Number</b></a></li>
+                <!-- <li><a href="#part4"><b>[Extra Credit] Formatting Phone Number</b></a></li> -->
+            </ul>
+            <p id="return-to-hw1"><a href="hw1.html"> &lt;&lt;&lt; click here return to hw#1</a></p>
+        </nav>
+        <div class="col-lg-1"></div>
+        <!-- main content on the right -->
+        <div class="col-lg-7 text-left">
+            <hr>
+            <div class="row" id="part1">
+                <h4>Part 1 - Validate for at Least 4 Decimal Positions</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>allows user to enter a number with 4 decimals</li>
+                        <li>validate user input</li>
+                        <li>if user input is valid, show the following in a textarea:</li>
+                        <li>A. round the floating-number to the nearest integer</li>
+                        <li>B. calculate the square root of the floating-point number and round it to an integer</li>
+                        <li>C. round the floating-point number to the nearest tenths position</li>
+                        <li>D. round the floating-point number to the nearest hundredths position</li>
+                        <li>E. round the floating-point number to the nearest thousandths position</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p1">
+                        <form name="userinfo">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="5">Validate for at Least 4 Decimal Positions and Show Different Results</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><label for="userinput">Enter a number with at least 4 decimal positions</label></td>
+                                    <td><input id="userinput" value="" type="text" autofocus required></td>
+                                    <td id="error1"></td>
+                                    <td><input type="button" value="Submit" name="validate" id="validate" onclick="processInput();"></td>
+                                    <td><input type="button" value="Clear" name="clear" id="clear" onclick="clearFloat();"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="result1">Your result</label></td>
+                                    <td colspan="4"><textarea id="result1"></textarea></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part2">
+                <h4>Part 2 - [Regex] Matching a Char</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>let user input a character in an input box</li>
+                        <li>let user input a arbitrary amount of characters in a textarea</li>
+                        <li>a submit and a clear button</li>
+                        <li>match all the character the user provided from the text</li>
+                        <li>show counts of the appearance of the character</li>
+                        <li>if char is not found, open a new window and show "Search character X not found in the content you typed"</li>
+                        <li>the new window size is 300px by 100px with no extra contents</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p2">
+                        <form name="matchChar">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="5">Matching a Char and get Appearance Count</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><label for="charInput">Enter a character: </label></td>
+                                    <td><input type="text" maxlength="1" id="charInput"></td>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="paragraphInput">Enter your content: </label></td>
+                                    <td colspan="3"><textarea id="paragraphInput"></textarea></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" id="matchChar" onclick="matchCh();" value="Find Match"></td>
+                                    <td><input type="button" id="clearMatch1" onclick="clearMatch2();" value="Clear"></td>
+                                    <td colspan="3"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="result2">Result: </label></td>
+                                    <td colspan="4"><textarea id="result2" readonly></textarea></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part3">
+                <h4>Part 3 - [Regex] Matching Phone Number</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>allow user input a phone number</li>
+                        <li>create a process button and a clear form button</li>
+                        <li>user's phone number needs to in this format: (999)999-9999</li>
+                        <li>use splite to separate area code, first 3 digits of the phone number, and the last 4 digits</li>
+                        <li>display the three parts in three separate boxes</li>
+                        <li>show error message if user put phone number in incorrect format</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p3">
+                        <form name="phoneNumber">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="5">Matching Phone Number</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><label for="phoneNum">Enter a Phone Number: </label></td>
+                                    <td><input type="tel" id="phoneNum" placeholder="(999)999-9999" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}"></td>
+                                    <td id="error3"></td>
+                                    <td><input type="button" value="Process" id="processNum" onclick="processPhoneNum();"></td>
+                                    <td><input type="button" value="Clear" id="clearNum" onclick="clearPhoneNum();"></td>
+                                </tr>
+                                <tr>
+                                    <td id="areaCodeLabel"></td>
+                                    <td id="areaCode"></td>
+                                    <td id="phoneNumberLabel"></td>
+                                    <td id="phoneNumber1"></td>
+                                    <td id="phoneNumber2"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!--
+            <div class="row" id="part4">
+                <h4>Part 3 - User State Information</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>ask user to type in state full name or its abbreviation</li>
+                        <li>search in database to see if state exists</li>
+                        <li>print out result and extra information of the state</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p3">
+                        <form name="stateinfo">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="4">Census Data of User's State</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><label for="state">Enter your State here:</label></td>
+                                    <td><input id="state" name="state" type="text" required></td>
+                                    <td><input id="searchstate" name="searchstate" value="Search" type="button" onclick="search();"></td>
+                                    <td id="state_empty"></td>
+                                </tr>
+                                <tr id="resultlabel"></tr>
+                                <tr id="resultdata"></tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
 </div>
-<footer class="container-fluid text-center">
-    <p>Yves Wu</p>
+<footer class="footer-default">
+    <div class="container-fluid text-center">
+        <p>Yves</p>
+    </div>
 </footer>
 </body>
 </html>
+

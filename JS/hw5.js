@@ -156,7 +156,7 @@ function search() {
         'WY': 'Wyoming'
     };
 
-    let exist = false;
+    let exist;
     let state = document.getElementById("state").value.toUpperCase();
     let abbr = state.length === 2 ;
     if (abbr) {
