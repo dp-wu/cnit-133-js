@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#7">
+    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#5">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HW#7</title>
-    <!-- Using MaxCDN Bootstrap CDN (pasted from W3Schools -->
+    <!-- jQuery UI -->
+    <link href=”https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css” rel =”stylesheet”>
+    <script src=”https://code.jquery.com/jquery-1.10.2.js”></script>
+    <script src=”https://code.jquery.com/ui/1.10.4/jquery-ui.js”></script>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/template.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Local Styles and Source Code -->
+    <link rel="stylesheet" href="../template/template.css">
+    <link rel="stylesheet" href="../CSS/cnit.css">
+    <link rel="stylesheet" href="../CSS/hw2.css">
+    <link rel="stylesheet" href="../CSS/hw7.css">
+    <script src="../JS/hw7.js"></script>
 </head>
-<body>
+<body onload="loadContents();">
 <!-- Navigation bar -->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -43,10 +52,130 @@
 </nav>
 <!-- My contents will be here -->
 <div class="container container-fluid">
-<h5>Content coming soon...</h5><p><a href="hw1.html">click here return to hw#1</a></p>
+    <header>
+        <h2>Homework 7 - Object Model and Miscellaneous jQuery</h2>
+    </header>
+    <hr>
+    <div class="row content" id="main-content">
+        <!-- sidebar on the left for easy navigation -->
+        <nav class="col-lg-4">
+            <ul class="nav navbar-default nav-pills nav-stacked">
+                <li><a href="#part1"><b>[PART1] Show Selected Style</b></a></li>
+                <li><a href="#part2"><b>[PART2] Mouseover Dropdown Menu</b></a></li>
+            </ul>
+            <p id="return-to-hw1"><a href="hw1.html"> &lt;&lt;&lt; click here return to hw#1</a></p>
+        </nav>
+        <div class="col-lg-1"></div>
+        <!-- main content on the right -->
+        <div class="col-lg-7 text-left">
+            <hr>
+            <div class="row" id="part1">
+                <h4>Part 1 - Show Selected Style</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>a div or a main tag with at least 3 paragraphs</li>
+                        <li>a form with radio buttons for user to select the background color</li>
+                        <li>checkboxes allow the user to choose "underline" and/or "bold" and/or "italic"</li>
+                        <li>a select element to create a dropdown list for user to select font size</li>
+                        <li>styles should be applied right away</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p1">
+                        <hr>
+                        <div id="change_paragraph">
+                            <p>This is the first paragraph</p>
+                            <p>This is the second paragraph</p>
+                            <p>this is the third paragraph</p>
+                        </div>
+                        <hr>
+                        <form id="change_style">
+                            <div id="bgcolor">
+                                <h5><strong>Select Background Color</strong></h5>
+                                <input type="radio" id="blue" name="background-color" value="#20639b">
+                                <label for="blue">blue</label>
+                                <input type="radio" id="yellow" name="background-color" value="#f6d55c">
+                                <label for="yellow">yellow</label>
+                                <input type="radio" id="orange" name="background-color" value="#ed553b">
+                                <label for="orange">orange</label>
+                            </div>
+                            <br>
+                            <div id="ftstyle">
+                                <h5><strong>Select Underline and/or Bold and/or Italic</strong></h5>
+                                <input type="checkbox" id="underline" name="text-decoration" value="underline">
+                                <label for="underline">underline</label>
+                                <input type="checkbox" id="bold" name="font-weight" value="bold">
+                                <label for="bold">bold</label>
+                                <input type="checkbox" id="italic" name="font-style" value="italic">
+                                <label for="italic">italic</label>
+                            </div>
+                            <div>
+                                <br>
+                                <label for="ftsize">Select Font Size</label>
+                                <select id="ftsize" name="font-size">
+                                    <option value="100%">original</option>
+                                    <option value="200%">200%</option>
+                                    <option value="150%">150%</option>
+                                    <option value="50%">50%</option>
+                                </select>
+                            </div>
+                            <hr>
+                        </form>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row" id="part2">
+                <h4>Part 2 - Mouseover Dropdown Menu</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>a navigation to hw2, hw3, hw4</li>
+                        <li>display dropdown menu when mouseover the navigation</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p2">
+                        <ul id="ans2_nav">
+                            <li id="tohw2">
+                                <a href="hw2.html">Homework2</a>
+                                <ul id="hide2">
+                                    <li><a href="hw2.html#part1">HW2 Part1</a></li>
+                                    <li><a href="hw2.html#part2">HW2 Part2</a></li>
+                                    <li><a href="hw2.html#part3">HW2 Extra Credit</a></li>
+                                </ul>
+                            </li>
+                            <li id="tohw3">
+                                <a href="hw3.html">Homework3</a>
+                                <ul id="hide3">
+                                    <li><a href="hw3.html#part1">HW3 Part1</a></li>
+                                    <li><a href="hw3.html#part2">HW3 Part2</a></li>
+                                    <li><a href="hw3.html#part3">HW3 Part3</a></li>
+                                    <li><a href="hw3.html#part4">HW3 Extra Credit</a></li>
+                                </ul>
+                            </li>
+                            <li id="tohw4">
+                                <a href="hw4.html">Homework4</a>
+                                <ul id="hide4">
+                                    <li><a href="hw3.html#part1">HW4 Part1</a></li>
+                                    <li><a href="hw3.html#part2">HW4 Part2</a></li>
+                                    <li><a href="hw3.html#part3">HW4 Extra Credit</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="extraspace"></div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<footer class="container-fluid text-center">
-    <p>Yves Wu</p>
+<footer class="footer-default">
+    <div class="container-fluid text-center">
+        <p>Yves</p>
+    </div>
 </footer>
 </body>
 </html>
+

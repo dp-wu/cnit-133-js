@@ -1,0 +1,25 @@
+#answer-p1 {
+    margin: 0 3vw;
+}
+#change_paragraph {
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#answer-p2 #ans2_nav li {
+    display: inline-block;
+    margin: 0.5vw 1vw;
+    padding: 0.5vw;
+}
+
+/*#answer-p2 #ans2_nav li ul li {
+    display: none
+}*/
+#hide2, #hide3, #hide4{
+    display: none;
+    position: absolute;
+}
+
+#extraspace {
+    height: 5vh;
+}

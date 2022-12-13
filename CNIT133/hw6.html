@@ -9,6 +9,11 @@
     <link href=”https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css” rel =”stylesheet”>
     <script src=”https://code.jquery.com/jquery-1.10.2.js”></script>
     <script src=”https://code.jquery.com/ui/1.10.4/jquery-ui.js”></script>
+    <!-- jQuery Mask Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"
+            integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA="
+            crossorigin="anonymous"
+    ></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -188,7 +193,7 @@
                                 <tbody>
                                 <tr>
                                     <td><label for="phoneNum">Enter a Phone Number: </label></td>
-                                    <td><input type="tel" id="phoneNum" placeholder="(999)999-9999" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}"></td>
+                                    <td><input type="text" name="phoneNumber" id="phoneNum" placeholder="(999)999-9999" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}"></td>
                                     <td id="error3"></td>
                                     <td><input type="button" value="Process" id="processNum" onclick="processPhoneNum();"></td>
                                     <td><input type="button" value="Clear" id="clearNum" onclick="clearPhoneNum();"></td>
@@ -207,41 +212,6 @@
                 </div>
             </div>
             <hr>
-            <!--
-            <div class="row" id="part4">
-                <h4>Part 3 - User State Information</h4>
-                <div class="answers">
-                    <p><strong>Description</strong></p>
-                    <ul>
-                        <li>ask user to type in state full name or its abbreviation</li>
-                        <li>search in database to see if state exists</li>
-                        <li>print out result and extra information of the state</li>
-                    </ul>
-                    <p><strong>Answer</strong></p>
-                    <div id="answer-p3">
-                        <form name="stateinfo">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th colspan="4">Census Data of User's State</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><label for="state">Enter your State here:</label></td>
-                                    <td><input id="state" name="state" type="text" required></td>
-                                    <td><input id="searchstate" name="searchstate" value="Search" type="button" onclick="search();"></td>
-                                    <td id="state_empty"></td>
-                                </tr>
-                                <tr id="resultlabel"></tr>
-                                <tr id="resultdata"></tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            -->
         </div>
     </div>
 </div>

@@ -178,7 +178,7 @@ function clearMatch2() {
 
 
 /* **********************************************************************************
- * Part 3 - Matching a Char and get Appearance Count  *
+ * Part 3 - Matching Phone Numbers  *
 ********************************************************************************** */
 function processPhoneNum() {
     let pn = document.getElementById("phoneNum").value;
@@ -208,3 +208,9 @@ function clearPhoneNum() {
     clearInput(3);
     clearMessage(3);
 }
+
+
+/* **********************************************************************************
+ * Extra Credit - Matching Phone Numbers  *
+********************************************************************************** */
+$('input[name="phoneNumber"]').mask('(000)000-0000');
