@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#8">
+    <meta name="description" content="CCSF CNIT133 (JavaScript, jQuery, AJAX) Course Homework#5">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HW#8</title>
-    <!-- Using MaxCDN Bootstrap CDN (pasted from W3Schools -->
+    <!-- jQuery UI -->
+    <link href=”https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css” rel =”stylesheet”>
+    <script src=”https://code.jquery.com/jquery-1.10.2.js”></script>
+    <script src=”https://code.jquery.com/ui/1.10.4/jquery-ui.js”></script>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/template.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Local Styles and Source Code -->
+    <link rel="stylesheet" href="../template/template.css">
+    <link rel="stylesheet" href="../CSS/cnit.css">
+    <link rel="stylesheet" href="../CSS/hw2.css">
+    <link rel="stylesheet" href="../CSS/hw8.css">
+    <script src="../JS/hw8.js"></script>
 </head>
-<body>
+<body onload="loadContents();">
 <!-- Navigation bar -->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -43,10 +52,47 @@
 </nav>
 <!-- My contents will be here -->
 <div class="container container-fluid">
-<h5>Content coming soon...</h5><p><a href="hw1.html">click here return to hw#1</a></p>
+    <header>
+        <h2>Homework 8 - AJAX Applications</h2>
+    </header>
+    <hr>
+    <div class="row content" id="main-content">
+        <!-- sidebar on the left for easy navigation -->
+        <nav class="col-lg-4">
+            <ul class="nav navbar-default nav-pills nav-stacked">
+                <li><a href="#part1"><b>[PART1] Ajax and Rest API on Hills</b></a></li>
+            </ul>
+            <p id="return-to-hw1"><a href="hw1.html"> &lt;&lt;&lt; click here return to hw#1</a></p>
+        </nav>
+        <div class="col-lg-1"></div>
+        <!-- main content on the right -->
+        <div class="col-lg-7 text-left">
+            <hr>
+            <div class="row" id="part1">
+                <h4>Part 1 - Show Selected Style</h4>
+                <div class="answers">
+                    <p><strong>Description</strong></p>
+                    <ul>
+                        <li>update given xml file and append a new record of myself at the end</li>
+                        <li>read the given .html file and explain how Ajax work</li>
+                        <li>look through the API list and select one create a report about it</li>
+                        <li>create a link to the API document</li>
+                    </ul>
+                    <p><strong>Answer</strong></p>
+                    <div id="answer-p1">
+                        <p><a href="https://hills.ccsf.edu/~ywu635/ajaxassignment.html">Click here go to Hills.</a></p>
+                    </div>
+                    <a href="#">Back to top...</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<footer class="container-fluid text-center">
-    <p>Yves Wu</p>
+<footer class="footer-default">
+    <div class="container-fluid text-center">
+        <p>Yves</p>
+    </div>
 </footer>
 </body>
 </html>
+
