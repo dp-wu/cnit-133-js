@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VMD</title>
-    <!-- Using MaxCDN Bootstrap CDN (pasted from W3Schools -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../template/template.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Yvette's VMD Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/template.css">
 </head>
 <body>
-<!-- Navigation bar -->
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="../index.html">BogusProof</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="../index.html">Home</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">CNIT 133<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="../CNIT133/hw1.html">Homework 1</a></li>
-                    <li><a href="../CNIT133/hw2.html">Homework 2</a></li>
-                    <li><a href="../CNIT133/hw3.html">Homework 3</a></li>
-                    <li><a href="../CNIT133/hw4.html">Homework 4</a></li>
-                    <li><a href="../CNIT133/hw5.html">Homework 5</a></li>
-                    <li><a href="../CNIT133/hw6.html">Homework 6</a></li>
-                    <li><a href="../CNIT133/hw7.html">Homework 7</a></li>
-                    <li><a href="../CNIT133/hw8.html">Homework 8</a></li>
-                </ul>
-            </li>
-            <li class="active"><a href="../VMD105/vmd.html">VMD 105</a></li>
-            <li><a href="../DSGN101/dsgn.html">DSGN 101</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="../about.html">About Yves <span class="glyphicon glyphicon-apple"></span></a></li>
-        </ul>
-    </div>
-</nav>
-<!-- My contents will be here -->
-<div class="container container-fluid">
-<h5>Content coming soon...</h5><p><a href="../CNIT133/hw1.html">click here return to hw#1</a></p>
+<div id="nav">
+  <nav>
+    <a href="vmd.html">Home</a>
+    <a href="pixels.html">Pixels</a>
+    <a href="vector.html">Vector</a>
+    <a href="motion.html">Motion</a>
+    <a href="print.html">Print</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </div>
-<footer class="container-fluid text-center">
-    <p>Yves Wu</p>
-</footer>
+<div id="main-content">
+  <p>Hi, welcome to Yvette's Page.</p>
+  <p class="other-color">This site contains four projects I've worked on during this semester in VMD105 class.</p>
+  <p class="other-color">This class was fun, I encourage everyone taking this class if you are interested using Adobe softwares and graphic designs in general.</p>
+</div>
+<script src="https://unpkg.com/css-doodle@0.31.2/css-doodle.min.js"></script>
+<!-- source of this part of code: https://codepen.io/eZ_UI/pen/vYBbvxZ -->
+<css-doodle>
+  :doodle {
+  @grid: 15 / 100vmax;
+  background: #fff;
+  cursor: pointer;
+  }
+  :doodle(:hover) { --s: 1 ; }
+  :after {
+  content: @pick(y, W);
+  font-size: 4vmax;
+  color: #F2E5E5;
+  transform: scale(@rand(.1, .9));
+  }
+  transition: .5s cubic-bezier(.175, .885, .32, 1.275);
+  transition-delay: @rand(1500ms);
+  transform: translateY(calc(var(--s) * 150%)) rotate(calc(var(--s) * 360deg));
+</css-doodle>
 </body>
+v
 </html>

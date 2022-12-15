@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yvette's VMD Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/template.css">
+</head>
+<body>
+<div id="nav">
+    <nav>
+        <a href="vmd.html">Home</a>
+        <a href="pixels.html">Pixels</a>
+        <a href="vector.html">Vector</a>
+        <a href="motion.html">Motion</a>
+        <a href="print.html">Print</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+<div id="main-content">
+    <p>Contact Yvette: </p>
+    <p class="other-color">Email: ywu635@mail.ccsf.edu</p>
+    <p class="other-color">San Francisco, CA</p>
+</div>
+
+<script src="https://unpkg.com/css-doodle@0.31.2/css-doodle.min.js"></script>
+<!-- source of this part of code: https://codepen.io/eZ_UI/pen/vYBbvxZ -->
+<css-doodle>
+    :doodle {
+    @grid: 15 / 100vmax;
+    background: #fff;
+    cursor: pointer;
+    }
+    :doodle(:hover) { --s: 1 ; }
+    :after {
+    content: @pick(y, W);
+    font-size: 4vmax;
+    color: #FAF5E4;
+    transform: scale(@rand(.1, .9));
+    }
+    transition: .5s cubic-bezier(.175, .885, .32, 1.275);
+    transition-delay: @rand(1500ms);
+    transform: translateY(calc(var(--s) * 150%)) rotate(calc(var(--s) * 360deg));
+</css-doodle>
+</body>
+
+</html>
